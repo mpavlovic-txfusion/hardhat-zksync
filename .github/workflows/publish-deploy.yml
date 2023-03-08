@@ -35,7 +35,7 @@ jobs:
           npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
 
       - name: Setup environment
-        run: npm ci && npm run build
+        run: npm i && npm run build
 
       # - name: Publish
       #   run: npm publish @matterlabs/hardhat-zksync-deploy --tag ${{ inputs.tag }} --workspace=packages/hardhat-zksync-deploy --access=public
