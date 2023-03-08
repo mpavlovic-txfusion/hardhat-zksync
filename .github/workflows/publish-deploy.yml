@@ -22,14 +22,22 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-          registry-url: 'https://registry.npmjs.org'
+          # registry-url: 'https://registry.npmjs.org'
           cache: 'yarn'
+        
+      - name: "Setup npm"
+        run: |
+          npm set @mpavlovic-txfusion:registry=https://npm.pkg.github.com/mpavlovic-txfusion
+          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
 
       - name: Setup environment
         run: yarn && yarn build
 
+      # - name: Publish
+      #   run: npm publish @matterlabs/hardhat-zksync-deploy --tag ${{ inputs.tag }} --workspace=packages/hardhat-zksync-deploy --access=public
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPMJS_NPM_MATTERLABS_AUTOMATION_TOKEN }}
+
       - name: Publish
-        run: npm publish @matterlabs/hardhat-zksync-deploy --tag ${{ inputs.tag }} --workspace=packages/hardhat-zksync-deploy --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_NPM_MATTERLABS_AUTOMATION_TOKEN }}
+        run: npm publish @mpavlovic-txfusion/hardhat-zksync-deploy --tag ${{ inputs.tag }} --workspace=packages/hardhat-zksync-deploy --access=public
 
