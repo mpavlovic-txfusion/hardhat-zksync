@@ -43,4 +43,4 @@ jobs:
       #     NODE_AUTH_TOKEN: ${{ secrets.NPMJS_NPM_MATTERLABS_AUTOMATION_TOKEN }}
 
       - name: Publish
-        run: npm publish --tag ${{ inputs.tag }} --workspace=packages/hardhat-zksync-deploy
+        run: npm publish @mpavlovic-txfusion/hardhat-zksync-deploy --tag ${{ inputs.tag }} --workspace=packages/hardhat-zksync-deploy

@@ -1,5 +1,5 @@
 {
-  "name": "@matterlabs/hardhat-zksync-deploy",
+  "name": "@mpavlovic-txfusion/hardhat-zksync-deploy",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   },
