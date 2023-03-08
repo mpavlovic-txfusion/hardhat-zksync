@@ -31,8 +31,8 @@ jobs:
         
       - name: "Setup npm"
         run: |
-          npm set @mpavlovic-txfusion:registry=https://npm.pkg.github.com
-          npm set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
+          npm config set @mpavlovic-txfusion:registry=https://npm.pkg.github.com
+          npm config set "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}"
 
       - name: Setup environment
         run: yarn && yarn build
